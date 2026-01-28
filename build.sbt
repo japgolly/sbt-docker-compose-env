@@ -7,4 +7,8 @@ version := "0.1.0-SNAPSHOT"
 // MANDATORY: sbt 1.x plugins and build libraries must use Scala 2.12
 scalaVersion := "2.12.21"
 
-libraryDependencies +=  "org.scala-sbt" % "sbt" % "1.11.7" % Provided
+libraryDependencies += "org.scala-sbt" % "sbt" % "1.11.7" % Provided
+
+libraryDependencies += "com.lihaoyi" %% "utest" % "0.9.2" % Test
+
+testFrameworks += new TestFramework("utest.runner.Framework")

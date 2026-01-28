@@ -44,6 +44,7 @@ object DockerComposeEnv {
       apply(b.result())
     }
 
+/*
     def fromProps(props: File): JavaOptions =
       fromProps(IO readLines props)
 
@@ -56,6 +57,7 @@ object DockerComposeEnv {
         .toList
       apply(list)
     }
+*/
   }
 
   final class Services(startFn: () => Unit, stopFn: () => Unit) {
