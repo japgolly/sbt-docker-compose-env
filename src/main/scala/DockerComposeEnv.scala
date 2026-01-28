@@ -17,7 +17,10 @@ object DockerComposeEnv {
   final case class JavaOptions(asList: List[String]) extends AnyVal {
 
     def add(k: String, v: String): JavaOptions =
-      JavaOptions(s"-D$k=$v" :: asList.filterNot(_ startsWith s"-D$k="))
+      JavaOptions(s"-D$k=$v" :: remove(k).asList)
+
+    def remove(k: String): JavaOptions =
+      JavaOptions(asList.filterNot(_ startsWith s"-D$k="))
 
     def ++(other: JavaOptions): JavaOptions =
       JavaOptions(asList ++ other.asList)
