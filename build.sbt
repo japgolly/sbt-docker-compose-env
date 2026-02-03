@@ -1,8 +1,13 @@
-name := "sbt-docker-compose-env"
+inThisBuild(List(
+  organization := "com.github.japgolly.sbt-docker-compose-env",
+  homepage := Some(url("https://github.com/japgolly/sbt-docker-compose-env")),
+  licenses := List("Apache-2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0")),
+  developers := List(
+    Developer("japgolly", "David Barri", "japgolly@gmail.com", url("https://github.com/japgolly")),
+  ),
+))
 
-organization := "com.github.japgolly.sbt-docker-compose-env"
-
-version := "0.1.0-SNAPSHOT"
+name := "lib"
 
 // MANDATORY: sbt 1.x plugins and build libraries must use Scala 2.12
 scalaVersion := "2.12.21"

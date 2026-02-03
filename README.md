@@ -3,7 +3,7 @@
 Add this to your `project/plugins.sbt` and replace `version`:
 
 ```scala
-libraryDependencies += "com.github.japgolly.sbt-docker-compose-env" %% "sbt-docker-compose-env" % version
+libraryDependencies += "com.github.japgolly.sbt-docker-compose-env" %% "lib" % version
 ```
 
 # Usage
