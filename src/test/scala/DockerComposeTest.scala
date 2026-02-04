@@ -41,6 +41,17 @@ object DockerComposeTest extends TestSuite {
         val options = JavaOptions.fromDockerCompose("empty", root / "test-env")
         assert(options.asList == List())
       }
+
+      test("rename") {
+        val options = JavaOptions.fromDockerCompose("postgres", root / "test-env")
+          .renameKeys("TEST_" + _)
+          .renameKey("TEST_POSTGRES_USER", "TEST_POSTGRES_USERNAME")
+        assert(options.asList.sorted == List(
+          "-DTEST_POSTGRES_DB=example_test",
+          "-DTEST_POSTGRES_PASSWORD=sqd",
+          "-DTEST_POSTGRES_USERNAME=dev",
+        ))
+      }
     }
   }
 }

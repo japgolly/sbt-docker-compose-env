@@ -27,6 +27,15 @@ object DockerCompose {
 
     def asList: List[String] =
       asMap.iterator.map { case (k, v) => s"-D$k=$v" }.toList
+
+    def renameKeys(f: String => String): JavaOptions =
+      JavaOptions(asMap.map { case (k, v) => (f(k), v) })
+
+    def renameKey(key: String, replacement: String): JavaOptions =
+      renameKey(key, _ => replacement)
+
+    def renameKey(key: String, f: String => String): JavaOptions =
+      renameKeys(k => if (k == key) f(k) else k)
   }
 
   object JavaOptions {
