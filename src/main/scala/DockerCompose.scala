@@ -2,7 +2,7 @@ package japgolly.sbt
 
 import sbt._
 
-object DockerComposeEnv {
+object DockerCompose {
   import sys.process._
 
   def envFileValue(envRoot: File, key: String): String = {

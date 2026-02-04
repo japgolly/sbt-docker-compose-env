@@ -3,7 +3,7 @@
 Add this to your `project/plugins.sbt` and replace `version`:
 
 ```scala
-libraryDependencies += "com.github.japgolly.sbt-docker-compose-env" %% "lib" % version
+libraryDependencies += "com.github.japgolly.sbt-docker-compose" %% "lib" % version
 ```
 
 # Usage
@@ -18,12 +18,12 @@ First create `project/DockerEnv.scala` with the following
 ```scala
 import sbt._
 import sbt.Keys._
-import japgolly.sbt.DockerComposeEnv
+import japgolly.sbt.DockerCompose
 
 object DockerEnv {
 
   object test extends (Project => Project) {
-    private val services = DockerComposeEnv.Services.fromDockerCompose(file("envs/test"))
+    private val services = DockerCompose.Services.fromDockerCompose(file("envs/test"))
 
     override def apply(p: Project): Project =
       p.settings(

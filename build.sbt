@@ -1,6 +1,6 @@
 inThisBuild(List(
-  organization := "com.github.japgolly.sbt-docker-compose-env",
-  homepage := Some(url("https://github.com/japgolly/sbt-docker-compose-env")),
+  organization := "com.github.japgolly.sbt-docker-compose",
+  homepage := Some(url("https://github.com/japgolly/sbt-docker-compose")),
   licenses := List("Apache-2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0")),
   developers := List(
     Developer("japgolly", "David Barri", "japgolly@gmail.com", url("https://github.com/japgolly")),

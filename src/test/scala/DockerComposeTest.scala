@@ -2,9 +2,9 @@ package japgolly.sbt
 
 import sbt.{Tests => _, _}
 import utest._
-import DockerComposeEnv._
+import DockerCompose._
 
-object DockerComposeEnvTest extends TestSuite {
+object DockerComposeTest extends TestSuite {
 
   private val root = file("src/test/data")
 
